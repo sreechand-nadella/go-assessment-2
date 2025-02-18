@@ -1,0 +1,8 @@
+# Ignore embedded Git repositories
+github/tandemarc/api_dataos/
+github/tandemarc/ui_dataos/
+gitlab/occam-jupyterlab/
+gitlab/occam-python/
+
+# Ignore macOS system file
+.DS_Store
