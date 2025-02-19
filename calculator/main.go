@@ -1,10 +1,31 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"strconv"
 )
+
+// Calculator functions
+func Add(a, b float64) float64 {
+	return a + b
+}
+
+func Subtract(a, b float64) float64 {
+	return a - b
+}
+
+func Multiply(a, b float64) float64 {
+	return a * b
+}
+
+func Divide(a, b float64) (float64, error) {
+	if b == 0 {
+		return 0, errors.New("error division by zero is not allowed")
+	}
+	return a / b, nil
+}
 
 func main() {
 	// Check if the correct number of arguments is provided
@@ -27,7 +48,7 @@ func main() {
 		return
 	}
 
-	// Call the appropriate function from calc.go based on the operator
+	// Call the appropriate function based on the operator
 	switch operator {
 	case "add":
 		result := Add(num1, num2)
